@@ -1,9 +1,15 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
+from flask_caching import Cache
 import tensorflow as tf
 import numpy as np
 from PIL import Image
 from io import BytesIO
+
 app = Flask(__name__)
+CORS(app)
+# Sử dụng simple caching, bạn có thể cấu hình thêm
+cache = Cache(app, config={'CACHE_TYPE': 'simple'})
 
 # Load pre-trained model
 model = tf.keras.models.load_model('my_model.h5')
@@ -15,6 +21,8 @@ class_names = ['Bacterial Pneumonia', 'Corona Virus Disease',
                'Normal', 'Tuberculosis', 'Viral Pneumonia']
 
 
+# Cache kết quả trong 1 giờ (có thể điều chỉnh timeout theo nhu cầu)
+@cache.cached(timeout=3600)
 @app.route('/predict', methods=['POST'])
 def predict():
     try:
