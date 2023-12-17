@@ -35,8 +35,9 @@ def predict():
         image = Image.open(file_data)
         image = image.resize((224, 224))
         image_array = np.array(image)
-        image_array = np.stack(
-            [image_array, image_array, image_array], axis=-1)
+        if len(image_array.shape) == 2:
+            image_array = np.stack(
+                [image_array, image_array, image_array], axis=-1)
         print(image_array.shape)
         image_array = image_array / 255.0  # Chuẩn hóa pixel về đoạn [0, 1]
 
