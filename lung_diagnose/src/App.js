@@ -9,9 +9,9 @@ const App = () => {
   return (
     <div className="m-[100px]">
       <Routes>
-        <Route index element={<Home />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/services" element={<Services />} />
+        <Route exact index element={<Home />} />
+        <Route exact path="/home" element={<Home />} />
+        <Route exact path="/services" element={<Services />} />
       </Routes>
     </div>
   );
