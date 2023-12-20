@@ -86,18 +86,18 @@ const Services = () => {
             {!previewUrl && <div>No image preview</div>}
           </div>
           <div className="flex items-center justify-center">
-            <div className="w-full">
+            <div className="w-full" onClick={handlePredictClick}>
               <label className="w-full text-white bg-[#050708] hover:bg-[#050708]/90 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-sm px-5 py-2.5 flex items-center justify-center mr-2 mb-2 cursor-pointer">
-                <span className="text-center ml-2" onClick={handlePredictClick}>
-                  Dự đoán
+                <span className="text-center ml-2" >
+                  Predict
                 </span>
               </label>
             </div>
           </div>
           {result && (
             <div className="mt-4">
-              <p>Class Name: {result.class_name}</p>
-              <p>Confidence: {result.confidence}</p>
+              <p><span className="font-bold">Class Name:</span> {result.class_name}</p>
+              <p><span className="font-bold">Confidence:</span> {result.confidence}</p>
             </div>
           )}
         </div>

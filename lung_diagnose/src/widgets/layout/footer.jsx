@@ -81,7 +81,7 @@ export function Footer({ title, description, socials, menus, copyright }) {
 Footer.defaultProps = {
   title: "Khong Biet Code",
   description:
-    "Khong co viec gi kho Chi so long ko ben",
+    "Khong co viec gi kho. Chi so long ko ben",
   socials: [
     {
       color: "gray",

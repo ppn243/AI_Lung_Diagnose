@@ -58,7 +58,7 @@ export const teamData = [
   },
   {
     img: "/img/team-4.png",
-    name: "Jenna Kardi",
+    name: "Bao Ngo",
     position: "Founder and CEO",
     socials: [
       {

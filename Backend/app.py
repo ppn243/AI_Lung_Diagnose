@@ -12,7 +12,7 @@ CORS(app)
 cache = Cache(app, config={'CACHE_TYPE': 'simple'})
 
 # Load pre-trained model
-model = tf.keras.models.load_model('Backend/newModel.h5')
+model = tf.keras.models.load_model('newModel.h5')
 
 if model is None:
     raise ValueError("Model not loaded")
