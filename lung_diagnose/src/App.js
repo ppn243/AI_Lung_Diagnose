@@ -2,7 +2,7 @@ import {
   Route,
   Routes
 } from "react-router-dom";
-import { Home, Services } from './pages'
+import { Home, Pricing, Services } from './pages'
 
 
 const App = () => {
@@ -12,6 +12,7 @@ const App = () => {
         <Route exact index element={<Home />} />
         <Route exact path="/home" element={<Home />} />
         <Route exact path="/services" element={<Services />} />
+        <Route exact path="/pricing" element={<Pricing />} />
       </Routes>
     </div>
   );
